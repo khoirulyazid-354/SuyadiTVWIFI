@@ -3,64 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kerinci Net | Layanan TV Kabel & WiFi</title>
+  <title>SUYADI TVWIFI</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <header class="topbar">
-    <h1>Kerinci Net</h1>
-    <nav>
-      <a href="#paket">Paket</a>
-      <a href="#cek">Cek Tagihan</a>
-      <a href="#admin">Data Pelanggan</a>
+    <h1>SUYADI TVWIFI</h1>
+    <nav id="menu">
+      <a href="#beranda" data-hal="beranda">Beranda</a>
+      <a href="#paket" data-hal="paket">Paket</a>
+      <a href="#cek" data-hal="cek">Cek Tagihan</a>
+      <a href="#admin" data-hal="admin" id="menu-admin">Admin</a>
     </nav>
   </header>
 
   <main>
-    <section class="hero">
-      <h2>TV Kabel & Internet untuk Warga Kerinci</h2>
-      <p>Layanan stabil sampai ke pelosok. Hubungi kami untuk pemasangan.</p>
+    <section id="hal-beranda" class="hal">
+      <div class="hero">
+        <h2>TV Kabel & Internet WiFi untuk Warga Kerinci</h2>
+        <p>Layanan stabil sampai ke pelosok. Lihat paket kami atau cek tagihan Anda.</p>
+        <a class="tombol" href="#paket">Lihat Paket</a>
+        <a class="tombol putih" href="#cek">Cek Tagihan</a>
+      </div>
     </section>
 
-    <section id="paket">
-      <h2>Paket Layanan</h2>
+    <section id="hal-paket" class="hal">
+      <h2>Paket & Biaya</h2>
       <div class="cards" id="daftar-paket"></div>
+      <p class="catatan">Biaya pemasangan dibayar sekali. Iuran dibayar tiap bulan.</p>
     </section>
 
-    <section id="cek">
+    <section id="hal-cek" class="hal">
       <h2>Cek Tagihan</h2>
       <form id="form-cek">
-        <input id="input-id" placeholder="Masukkan ID pelanggan, contoh: TV-0001" required>
-        <button type="submit">Cek</button>
+        <input id="input-cek" placeholder="Masukkan ID atau nama (contoh: TV-0001)" required minlength="3">
+        <button type="submit">Cari</button>
       </form>
       <div id="hasil-cek" class="hasil"></div>
     </section>
 
-    <section id="admin">
-      <h2>Data Pelanggan <small>(data sampel)</small></h2>
-      <div class="stats" id="statistik"></div>
-      <div class="filter">
-        <input id="cari" placeholder="Cari nama / ID...">
-        <select id="f-layanan"><option value="">Semua layanan</option><option>TV Kabel</option><option>WiFi</option></select>
-        <select id="f-status"><option value="">Semua status</option><option>Lunas</option><option>Belum Bayar</option><option>Nunggak</option></select>
-        <select id="f-kecamatan"><option value="">Semua kecamatan</option></select>
+    <section id="hal-admin" class="hal">
+      <div id="box-login">
+        <h2>Login Admin</h2>
+        <form id="form-login">
+          <input id="l-user" placeholder="Username" autocomplete="username" required>
+          <input id="l-pass" type="password" placeholder="Sandi" autocomplete="current-password" required>
+          <button type="submit">Masuk</button>
+        </form>
+        <p id="pesan-login" class="galat"></p>
       </div>
-      <div class="tabel-wrap">
-        <table>
-          <thead><tr><th>ID</th><th>Nama</th><th>Kecamatan</th><th>Paket</th><th>Tarif</th><th>Status</th></tr></thead>
-          <tbody id="isi-tabel"></tbody>
-        </table>
-      </div>
-      <div class="paging">
-        <button id="prev">&laquo; Sebelumnya</button>
-        <span id="info-halaman"></span>
-        <button id="next">Berikutnya &raquo;</button>
+
+      <div id="box-admin" hidden>
+        <div class="baris-judul">
+          <h2>Data Pelanggan <small>(data sampel)</small></h2>
+          <button id="btn-keluar" class="sekunder">Keluar</button>
+        </div>
+        <div class="stats" id="statistik"></div>
+        <div class="filter">
+          <input id="cari" placeholder="Cari nama / ID...">
+          <select id="f-layanan"><option value="">Semua layanan</option></select>
+          <select id="f-status"><option value="">Semua status</option><option>Lunas</option><option>Belum Bayar</option><option>Nunggak</option></select>
+          <select id="f-kecamatan"><option value="">Semua kecamatan</option></select>
+        </div>
+        <div class="tabel-wrap">
+          <table>
+            <thead><tr><th>ID</th><th>Nama</th><th>Kecamatan</th><th>Layanan</th><th>Iuran/bln</th><th>Status</th></tr></thead>
+            <tbody id="isi-tabel"></tbody>
+          </table>
+        </div>
+        <div class="paging">
+          <button id="prev">&laquo; Sebelumnya</button>
+          <span id="info-halaman"></span>
+          <button id="next">Berikutnya &raquo;</button>
+        </div>
       </div>
     </section>
   </main>
 
-  <footer>&copy; 2026 Kerinci Net. Data di halaman ini hanya contoh.</footer>
+  <footer>&copy; 2026 SUYADI TVWIFI &middot; Kerinci, Jambi</footer>
 
+  <script src="js/config.js"></script>
   <script src="data/pelanggan.js"></script>
   <script src="js/app.js"></script>
 </body>

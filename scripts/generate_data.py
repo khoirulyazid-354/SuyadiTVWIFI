@@ -12,8 +12,11 @@ DEPAN = ["Ahmad", "Budi", "Candra", "Dedi", "Eko", "Fitri", "Gunawan", "Hendra",
          "Putra", "Rahmat", "Siti", "Tono", "Umar", "Wati", "Yusuf", "Zainal", "Rina"]
 BELAKANG = ["Saputra", "Hidayat", "Wijaya", "Pratama", "Sari", "Kurniawan",
             "Ramadhan", "Hakim", "Lestari", "Firmansyah", "Rahman", "Putri"]
-PAKET_TV = [("TV Kabel", 50000)]
-PAKET_WIFI = [("WiFi 10 Mbps", 150000), ("WiFi 20 Mbps", 200000), ("WiFi 30 Mbps", 250000)]
+
+# 1440 TV saja + 60 TV&WiFi (total TV 1500) + 40 WiFi saja (total WiFi 100)
+JENIS = ["TV"] * 1440 + ["TV+WiFi"] * 60 + ["WiFi"] * 40
+random.shuffle(JENIS)
+PREFIX = {"TV": "TV", "WiFi": "WF", "TV+WiFi": "TW"}
 
 def status():
     r = random.random()
@@ -22,18 +25,15 @@ def status():
     return "Nunggak", random.randint(2, 4)
 
 data = []
-for i in range(1, 1601):
-    wifi = i > 1500
-    paket, harga = random.choice(PAKET_WIFI if wifi else PAKET_TV)
+for i, jenis in enumerate(JENIS, 1):
     st, bln = status()
     data.append({
-        "id": f"{'WF' if wifi else 'TV'}-{i:04d}",
+        "id": f"{PREFIX[jenis]}-{i:04d}",
         "nama": f"{random.choice(DEPAN)} {random.choice(BELAKANG)}",
-        "alamat": f"RT {random.randint(1,9):02d}/RW {random.randint(1,5):02d}",
         "kecamatan": random.choice(KECAMATAN),
-        "layanan": "WiFi" if wifi else "TV Kabel",
-        "paket": paket,
-        "tarif": harga,
+        "alamat": f"RT {random.randint(1,9):02d}/RW {random.randint(1,5):02d}",
+        "layanan": jenis,
+        "tglPasang": f"{random.randint(2019,2026)}-{random.randint(1,11):02d}-{random.randint(1,28):02d}",
         "status": st,
         "bulanTunggak": bln,
     })

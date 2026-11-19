@@ -34,3 +34,18 @@ th { background:var(--bg); }
 .Lunas { background:var(--hijau); } .Belum { background:var(--kuning); } .Nunggak { background:var(--merah); }
 .paging { display:flex; justify-content:space-between; align-items:center; margin-top:12px; }
 footer { text-align:center; color:var(--abu); font-size:13px; padding:20px; }
+.hal { display:none; } .hal.aktif { display:block; }
+.topbar nav a.aktif { border-bottom:2px solid #fff; padding-bottom:3px; }
+.tombol { display:inline-block; background:#fff; color:var(--biru); padding:9px 16px; border-radius:8px; text-decoration:none; margin:8px 8px 0 0; font-weight:600; }
+.tombol.putih { background:transparent; color:#fff; border:1px solid #fff; }
+.hero { background:var(--biru); color:#fff; margin:-20px; padding:32px 24px; border-radius:12px; }
+.catatan { color:var(--abu); font-size:13px; }
+.galat { color:var(--merah); min-height:1em; }
+.baris-judul { display:flex; justify-content:space-between; align-items:center; gap:8px; flex-wrap:wrap; }
+button.sekunder { background:#fff; color:var(--biru); border:1px solid var(--biru); }
+.card .baris { display:flex; justify-content:space-between; font-size:14px; margin-top:6px; color:var(--abu); }
+.card .baris b { display:inline; color:var(--teks); font-size:14px; }
+.pilihan { cursor:pointer; margin-bottom:8px; }
+.riwayat { display:grid; grid-template-columns:repeat(6,1fr); gap:6px; margin-top:10px; text-align:center; font-size:12px; }
+.riwayat div { border-radius:8px; padding:6px 2px; background:var(--bg); }
+.riwayat .ok { background:#e3f4ea; color:var(--hijau); } .riwayat .tdk { background:#fbe7e4; color:var(--merah); }
