@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kerinci Net | Layanan TV Kabel & WiFi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Kerinci Net</h1>
+    <nav>
+      <a href="#paket">Paket</a>
+      <a href="#cek">Cek Tagihan</a>
+      <a href="#admin">Data Pelanggan</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <h2>TV Kabel & Internet untuk Warga Kerinci</h2>
+      <p>Layanan stabil sampai ke pelosok. Hubungi kami untuk pemasangan.</p>
+    </section>
+
+    <section id="paket">
+      <h2>Paket Layanan</h2>
+      <div class="cards" id="daftar-paket"></div>
+    </section>
+
+    <section id="cek">
+      <h2>Cek Tagihan</h2>
+      <form id="form-cek">
+        <input id="input-id" placeholder="Masukkan ID pelanggan, contoh: TV-0001" required>
+        <button type="submit">Cek</button>
+      </form>
+      <div id="hasil-cek" class="hasil"></div>
+    </section>
+
+    <section id="admin">
+      <h2>Data Pelanggan <small>(data sampel)</small></h2>
+      <div class="stats" id="statistik"></div>
+      <div class="filter">
+        <input id="cari" placeholder="Cari nama / ID...">
+        <select id="f-layanan"><option value="">Semua layanan</option><option>TV Kabel</option><option>WiFi</option></select>
+        <select id="f-status"><option value="">Semua status</option><option>Lunas</option><option>Belum Bayar</option><option>Nunggak</option></select>
+        <select id="f-kecamatan"><option value="">Semua kecamatan</option></select>
+      </div>
+      <div class="tabel-wrap">
+        <table>
+          <thead><tr><th>ID</th><th>Nama</th><th>Kecamatan</th><th>Paket</th><th>Tarif</th><th>Status</th></tr></thead>
+          <tbody id="isi-tabel"></tbody>
+        </table>
+      </div>
+      <div class="paging">
+        <button id="prev">&laquo; Sebelumnya</button>
+        <span id="info-halaman"></span>
+        <button id="next">Berikutnya &raquo;</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>&copy; 2026 Kerinci Net. Data di halaman ini hanya contoh.</footer>
+
+  <script src="data/pelanggan.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

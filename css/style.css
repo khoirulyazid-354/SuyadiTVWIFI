@@ -1,0 +1,36 @@
+:root { --biru:#0b5cab; --bg:#f4f7fb; --teks:#1d2733; --abu:#6b7785; --garis:#dde3ec;
+        --hijau:#1f8a4c; --kuning:#b7791f; --merah:#c0392b; }
+* { box-sizing:border-box; }
+body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",sans-serif; background:var(--bg); color:var(--teks); }
+.topbar { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap;
+          padding:14px 24px; background:var(--biru); color:#fff; }
+.topbar h1 { margin:0; font-size:20px; }
+.topbar nav a { color:#fff; margin-left:16px; text-decoration:none; font-size:14px; }
+main { max-width:1000px; margin:0 auto; padding:16px; }
+section { background:#fff; border:1px solid var(--garis); border-radius:12px; padding:20px; margin-bottom:20px; }
+section h2 { margin-top:0; }
+small { color:var(--abu); font-weight:400; font-size:13px; }
+.hero { background:var(--biru); color:#fff; }
+.cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; }
+.card { border:1px solid var(--garis); border-radius:10px; padding:16px; }
+.card b { display:block; font-size:16px; }
+.card .harga { color:var(--biru); font-size:20px; margin-top:6px; }
+form { display:flex; gap:8px; flex-wrap:wrap; }
+input, select, button { padding:9px 12px; border:1px solid var(--garis); border-radius:8px; font:inherit; }
+input { flex:1; min-width:160px; }
+button { background:var(--biru); color:#fff; border:none; cursor:pointer; }
+button:disabled { opacity:.4; cursor:default; }
+.hasil { margin-top:12px; }
+.stats { display:grid; grid-template-columns:repeat(auto-fit,minmax(130px,1fr)); gap:10px; margin-bottom:14px; }
+.stat { background:var(--bg); border-radius:10px; padding:12px; }
+.stat span { font-size:12px; color:var(--abu); }
+.stat b { display:block; font-size:22px; }
+.filter { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:12px; }
+.tabel-wrap { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:14px; }
+th, td { text-align:left; padding:8px 10px; border-bottom:1px solid var(--garis); white-space:nowrap; }
+th { background:var(--bg); }
+.badge { padding:2px 8px; border-radius:99px; font-size:12px; color:#fff; }
+.Lunas { background:var(--hijau); } .Belum { background:var(--kuning); } .Nunggak { background:var(--merah); }
+.paging { display:flex; justify-content:space-between; align-items:center; margin-top:12px; }
+footer { text-align:center; color:var(--abu); font-size:13px; padding:20px; }
