@@ -28,3 +28,5 @@ Table Editor > tabel `pelanggan` > Import CSV (kolom: id, nama, kecamatan, alama
 - Pelanggan hanya bisa mencari lewat fungsi `cek_tagihan` (minimal 3 huruf, maksimal 10 hasil, tanpa alamat lengkap). Tabel asli tidak bisa dibaca tanpa login.
 - Jangan pernah menaruh kunci `service_role` di repo.
 - Tarif TV saja dan WiFi saja di `js/config.js` masih angka sementara.
+
+- Tampilan mengikuti contoh desain (gaya Nexora): ungu + hijau lime. Isi `whatsapp` di `js/config.js` agar tombol "Hubungi kami" dan tombol panah paket muncul.

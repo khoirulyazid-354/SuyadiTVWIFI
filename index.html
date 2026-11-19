@@ -10,36 +10,95 @@
 </head>
 <body>
   <header class="topbar">
-    <h1 class="logo">📡 SUYADI TVWIFI</h1>
+    <h1 class="logo"><span class="mark">S</span>SUYADI TVWIFI</h1>
     <nav id="menu">
       <a href="#beranda" data-hal="beranda">Beranda</a>
       <a href="#paket" data-hal="paket">Paket</a>
       <a href="#cek" data-hal="cek">Cek Tagihan</a>
       <a href="#admin" data-hal="admin">Admin</a>
     </nav>
+    <a class="pill-btn" href="#cek">Cek Tagihan <span>↗</span></a>
   </header>
+  <nav class="sisi">
+    <a href="#beranda" data-hal="beranda" title="Beranda">🏠</a>
+    <a href="#paket" data-hal="paket" title="Paket">📦</a>
+    <a href="#cek" data-hal="cek" title="Cek Tagihan">🧾</a>
+    <a href="#admin" data-hal="admin" title="Admin">👤</a>
+  </nav>
   <div id="banner-setup" class="banner" hidden>Supabase belum dihubungkan. Isi <b>js/config.js</b> (lihat README).</div>
 
   <main>
     <section id="hal-beranda" class="hal">
       <div class="hero">
-        <span class="pill">Kerinci, Jambi</span>
-        <h2>Tontonan & internet<br>sampai ke pelosok desa</h2>
-        <p>TV kabel dan WiFi untuk warga Kerinci. Pasang sekarang, bayar bulanan, dan cek tagihan kapan saja.</p>
-        <a class="btn putih" href="#paket">Lihat Paket</a>
-        <a class="btn garis" href="#cek">Cek Tagihan</a>
+        <div>
+          <span class="tag-kecil">⚡ KERINCI, JAMBI</span>
+          <h2>Tontonan<br>& internet<br><em>menyambung</em><br>tiap rumah</h2>
+          <p>TV kabel dan WiFi untuk warga Kerinci. Pasang sekali, bayar bulanan, cek tagihan kapan saja.</p>
+          <a class="cta" href="#paket">LIHAT PAKET <span>→</span></a>
+        </div>
+        <div class="visual">
+          <svg viewBox="0 0 480 400" aria-hidden="true">
+            <defs>
+              <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#b3a7ff"/><stop offset="1" stop-color="#6d5ce8"/></linearGradient>
+              <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#d6d0ff"/><stop offset="1" stop-color="#8f83f5"/></linearGradient>
+            </defs>
+            <circle cx="260" cy="200" r="165" fill="url(#g1)" opacity=".55"/>
+            <g transform="rotate(-6 240 210)">
+              <rect x="80" y="100" width="310" height="190" rx="18" fill="#1b1b2b"/>
+              <rect x="93" y="113" width="284" height="164" rx="9" fill="url(#g2)"/>
+              <path d="M93 277 L185 180 L248 240 L300 190 L377 277 Z" fill="#5b4bd6" opacity=".75"/>
+              <circle cx="326" cy="150" r="16" fill="#d6f54a"/>
+              <rect x="218" y="290" width="44" height="20" fill="#2a2a3d"/><rect x="170" y="308" width="140" height="10" rx="5" fill="#2a2a3d"/>
+            </g>
+            <g fill="none" stroke="#d6f54a" stroke-width="10" stroke-linecap="round"><path d="M365 62a62 62 0 0 1 84 0"/><path d="M382 86a38 38 0 0 1 50 0"/></g>
+            <circle cx="407" cy="108" r="7" fill="#d6f54a"/>
+          </svg>
+          <div class="melayang" style="left:2%;top:62%">📺 TV Kabel</div>
+          <div class="melayang" style="right:2%;top:68%">📶 WiFi</div>
+        </div>
       </div>
-      <div class="fitur">
-        <div><span>📺</span><b>TV Kabel</b><p>Siaran lewat antena parabola, disalurkan ke rumah warga.</p></div>
-        <div><span>📶</span><b>WiFi</b><p>Internet untuk rumah, bandwidth diatur per pelanggan.</p></div>
-        <div><span>🧾</span><b>Tagihan Transparan</b><p>Cek status lunas dan riwayat bayar dengan ID atau nama.</p></div>
+
+      <div class="gelap">
+        <small>DIBUAT UNTUK WARGA KERINCI</small>
+        <div class="kolom4">
+          <div><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8"/></svg><b>TV Kabel</b><p>Siaran dari antena parabola, disalurkan ke rumah warga.</p></div>
+          <div><svg viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 20h.01"/></svg><b>Internet WiFi</b><p>Bandwidth diatur per pelanggan agar tetap stabil.</p></div>
+          <div><svg viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/><path d="M9 8h6M9 12h6"/></svg><b>Tagihan Jelas</b><p>Cek status lunas dan riwayat bayar dengan ID atau nama.</p></div>
+          <div><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg><b>Pembayaran Tercatat</b><p>Setiap pembayaran dicatat rapi oleh admin.</p></div>
+        </div>
+      </div>
+
+      <div class="baris-pilih">
+        <div><h3 class="judul-kecil">Pilihan<br>paket kami</h3><div class="garis-u"></div></div>
+        <div class="paket js-paket"></div>
+      </div>
+
+      <div class="strip">
+        <div><b>±1.500</b><span>Pelanggan TV kabel</span></div>
+        <div><b>±100</b><span>Pelanggan WiFi</span></div>
+        <div><b>Kerinci</b><span>Wilayah layanan</span></div>
+        <div><b>24 jam</b><span>Cek tagihan online</span></div>
+      </div>
+
+      <div class="bawah-besar">
+        <div>
+          <div class="kutip">“</div>
+          <blockquote>Kami hadir supaya warga di pelosok tetap bisa menonton dan terhubung.</blockquote>
+          <small>— SUYADI TVWIFI</small>
+        </div>
+        <div class="kotak-cta">
+          <h3>Ingin berlangganan?</h3>
+          <p>Lihat paket dan biaya pemasangan, atau cek tagihan Anda kapan saja.</p>
+          <a class="cta" href="#cek">CEK TAGIHAN <span>→</span></a>
+          <a class="cta" id="wa-cta" href="#" target="_blank" rel="noopener" hidden>HUBUNGI KAMI <span>→</span></a>
+        </div>
       </div>
     </section>
 
     <section id="hal-paket" class="hal">
       <h2 class="judul">Paket & Biaya</h2>
       <p class="sub">Biaya pemasangan dibayar sekali. Iuran dibayar setiap bulan.</p>
-      <div class="paket" id="daftar-paket"></div>
+      <div class="paket js-paket"></div>
     </section>
 
     <section id="hal-cek" class="hal">

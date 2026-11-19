@@ -32,20 +32,24 @@ function tampilHalaman() {
   const h = (location.hash || "#beranda").slice(1);
   const nama = ["beranda", "paket", "cek", "admin"].includes(h) ? h : "beranda";
   document.querySelectorAll(".hal").forEach(e => e.classList.toggle("aktif", e.id === "hal-" + nama));
-  document.querySelectorAll("#menu a").forEach(a => a.classList.toggle("aktif", a.dataset.hal === nama));
+  document.querySelectorAll("[data-hal]").forEach(a => a.classList.toggle("aktif", a.dataset.hal === nama));
 }
 window.addEventListener("hashchange", tampilHalaman);
 
 /* ---------- Menu Paket ---------- */
 function tampilPaket() {
   const ikon = { "TV": "📺", "WiFi": "📶", "TV+WiFi": "📺📶" };
-  $("daftar-paket").innerHTML = Object.keys(CONFIG.label).map(k => `
+  const wa = (CONFIG.whatsapp || "").replace(/\D/g, "");
+  const html = Object.keys(CONFIG.label).map(k => `
     <div class="kartu-paket ${k === "TV+WiFi" ? "unggul" : ""}">
       ${k === "TV+WiFi" ? '<span class="tag">Paket gabungan</span>' : ""}
-      <div class="ikon">${ikon[k]}</div><h3>${CONFIG.label[k]}</h3>
-      <div class="harga">${rupiah(CONFIG.bulanan[k])}<small> /bulan</small></div>
-      <div class="garis-info"><span>Biaya pemasangan</span><b>${rupiah(CONFIG.pasang[k])}</b></div>
+      <div class="gambar">${ikon[k]}</div><b>${CONFIG.label[k]}</b>
+      <div class="bawah"><div><div class="harga">${rupiah(CONFIG.bulanan[k])}<small> /bln</small></div>
+        <small>Pasang ${rupiah(CONFIG.pasang[k])}</small></div>
+        ${wa ? `<a class="panah" target="_blank" rel="noopener" href="https://wa.me/${wa}?text=${encodeURIComponent("Halo, saya mau pasang paket " + CONFIG.label[k])}">→</a>` : ""}</div>
     </div>`).join("");
+  document.querySelectorAll(".js-paket").forEach(e => (e.innerHTML = html));
+  if (wa) { const a = $("wa-cta"); a.href = "https://wa.me/" + wa; a.hidden = false; }
 }
 
 /* ---------- Cek tagihan (publik) ---------- */
