@@ -1,26 +1,30 @@
-# SUYADI TVWIFI
+# SUYADI TVWIFI (versi Supabase)
 
-Website layanan TV kabel & WiFi di Kerinci, Jambi. Berisi **data sampel fiktif** (1540 pelanggan).
-
-## Menu
-- **Beranda**, **Paket** (biaya pasang & iuran), **Cek Tagihan** (pelanggan, tanpa login, cari pakai ID/nama), **Admin** (login, dashboard & tabel pelanggan).
+Web TV kabel & WiFi: pelanggan cek tagihan tanpa login, admin login untuk kelola pelanggan dan catat pembayaran.
 
 ## Struktur
 ```
-index.html               halaman & menu
-css/style.css            tampilan
-js/config.js             nama web, tarif, akun admin (hash)
-js/app.js                logika web
-data/pelanggan.js        data sampel
-scripts/generate_data.py pembuat data sampel
+index.html            halaman & menu
+css/style.css         tampilan
+js/config.js          URL/kunci Supabase, tarif, daftar kecamatan
+js/app.js             logika web
+supabase/schema.sql   tabel, keamanan, fungsi cek tagihan
+supabase/seed.sql     (opsional) 60 pelanggan fiktif untuk uji coba
 ```
 
-## Ubah tarif
-Edit `js/config.js`. Tarif TV saja dan WiFi saja masih angka sementara.
+## Langkah pasang
+1. Buat project di supabase.com.
+2. **SQL Editor**: jalankan isi `supabase/schema.sql`. Lalu (opsional) `supabase/seed.sql` untuk data uji coba.
+3. **Authentication > Users > Add user**: isi email admin + sandi, centang auto confirm.
+4. **Matikan pendaftaran publik** ("Allow new users to sign up") di pengaturan Authentication. WAJIB, supaya orang lain tidak bisa mendaftar lalu mengakses data.
+5. **Project Settings > API**: salin *Project URL* dan *anon public key* ke `js/config.js`.
+6. Upload ke GitHub, aktifkan Pages (Settings > Pages > branch `main`).
 
-## Ganti sandi admin
-Buat hash SHA-256 dari sandi baru (`printf '%s' 'sandibaru' | sha256sum`), tempel ke `adminHash`.
+## Memasukkan data asli
+Table Editor > tabel `pelanggan` > Import CSV (kolom: id, nama, kecamatan, alamat, layanan, tgl_pasang, mulai_tagih).
+`layanan` harus `TV`, `WiFi`, atau `TV+WiFi`. `mulai_tagih` = bulan pertama yang mau ditagih lewat web (tanggal 1).
 
-## Peringatan keamanan
-Web ini statis: **login hanya penghalang tampilan, bukan pengaman data**. Siapa pun bisa membuka `data/pelanggan.js` langsung dan membaca semua data.
-Aman untuk data sampel. Untuk data pelanggan asli, pakai backend dengan login sungguhan (mis. Supabase) dan jangan simpan datanya di repo publik.
+## Catatan
+- Pelanggan hanya bisa mencari lewat fungsi `cek_tagihan` (minimal 3 huruf, maksimal 10 hasil, tanpa alamat lengkap). Tabel asli tidak bisa dibaca tanpa login.
+- Jangan pernah menaruh kunci `service_role` di repo.
+- Tarif TV saja dan WiFi saja di `js/config.js` masih angka sementara.
