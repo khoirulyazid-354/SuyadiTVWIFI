@@ -4,7 +4,7 @@ const CONFIG = {
   supabaseKey: "ISI_ANON_PUBLIC_KEY",
 
   namaWeb: "SUYADI TVWIFI",
-  whatsapp: "", // nomor WA tanpa +, contoh "6281234567890". Kosong = tombol WA disembunyikan
+  whatsapp: "6281371003514", // nomor WA tanpa +, contoh "6281234567890". Kosong = tombol WA disembunyikan
   // Tarif dalam rupiah. TV saja & WiFi saja: ANGKA SEMENTARA, ganti sesuai tarif asli.
   pasang:  { "TV": 250000, "WiFi": 250000, "TV+WiFi": 250000 },
   bulanan: { "TV": 50000,  "WiFi": 150000, "TV+WiFi": 100000 },
